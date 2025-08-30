@@ -11,7 +11,7 @@ def chunk(items, n):
     for i in range(0, len(items), n):
         yield items[i:i + n]
 
-api_keys = st.text_input("API Keys")
+api_keys = st.text_input("API Keys: (API key should give access to 'progression', please input API keys separated by space)")
 key_list = api_keys.split(" ")
 
 try:
