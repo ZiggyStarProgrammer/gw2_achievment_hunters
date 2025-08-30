@@ -1,6 +1,7 @@
 import streamlit as st
 import requests
 
+st.title("😍")
 st.title("GuildWars 2 - Achievment Hunters")
 
 url = "https://api.guildwars2.com/v2/account/achievements"
@@ -11,7 +12,13 @@ def chunk(items, n):
     for i in range(0, len(items), n):
         yield items[i:i + n]
 
-api_keys = st.text_input("API Keys: (API key should give access to 'progression', please input API keys separated by space)")
+with st.chat_message("ai"):
+    st.write("This application lets you enter one or several API keys which outputs a set of achievments " \
+    "that the given player/s have not yes completed 🚀\n\n" \
+    "If several keys are given, the result only shows achievments that neither of the players have completed")
+api_keys = st.text_input("API Keys:",
+                         help="API key should have access to 'progression'",
+                         placeholder="API keys must be entered separated by blankspace!")
 key_list = api_keys.split(" ")
 
 try:
