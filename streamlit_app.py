@@ -18,7 +18,7 @@ with st.chat_message("ai"):
     "If several keys are given, the result only shows achievments that neither of the players have completed")
 api_keys = st.text_input("API Keys:",
                          help="API key should have access to 'progression'",
-                         placeholder="API keys must be entered separated by blankspace!")
+                         placeholder="API keys must be entered separated by a space!")
 key_list = api_keys.split(" ")
 
 try:
